@@ -1,0 +1,52 @@
+<!DOCTYPE	html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz./thymeleaf/layout"
+	layout:decorator="LayoutPadrao"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
+
+<section layout:fragment="Conteudo">
+<body>
+
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Carros</h1>
+		</div>
+		<div class="panel-body">
+			<form class="form-inline" method="POST" th:object="${carro}"
+				th:action="@{/carros}" style="margin: 20px 0">
+				<div class="form-group">
+					<input type="hidden" th:field="*{id}"> 
+					<input type="text" class="form-control" placeholder="Marca" th:field="*{marca}" />
+					<input type="text" class="form-control" placeholder="Ano de fabricação" th:field="*{ano_fabricacao}" />
+				</div>
+				<div>
+					<button type="submit" class="btn btn-secondary">Adicionar</button>
+				</div>
+			</form>		
+						
+					
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Marca</th>
+						<th>Ano de Fabricação</th>
+						<th colspan=2>Ação</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="carro : ${carros}">
+						<td th:text="${carro.marca}">Fiat</td>
+						<td th:text="${carro.ano_fabricacao}">2005</td>
+
+						<td><a th:href="@{/carros/alterar/}+${carro.id}" class="glyphicon glyphicon­pencil">Alterar</a></td>
+						<td><a th:href="@{/carros/excluir/}+${carro.id}" class="glyphicon glyphicon‐trash">Excluir</a></td>
+
+					</tr>					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</section>
+</html>

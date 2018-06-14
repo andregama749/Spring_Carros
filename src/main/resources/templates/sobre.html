@@ -1,0 +1,25 @@
+<!DOCTYPE	html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz./thymeleaf/layout"
+	layout:decorator="LayoutPadrao"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
+	
+<section layout:fragment="Conteudo">
+<body>
+	<div style="margin: 20px">
+		<h3>Venha conhecer a GamaCars</h3>
+	</div>
+	<div style="margin: 20px">
+		<a class="navbar-brand" th:href="@{/}"><img src="../static/images/logo.png" th:src="@{/images/logo.png}" class="logo" style="width: 300px"/></a>
+	</div>
+	<div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.4838404260395!2d-41.32805853360372!3d-21.761527492803022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd449f2297259%3A0xb6f689d45dd16da2!2sParque+da+Rep%C3%BAblica+-+R.+Saldanha+Marinho+-+Centro%2C+Campos+dos+Goytacazes+-+RJ!5e0!3m2!1spt-BR!2sbr!4v1528855779907" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+		 
+</body>
+</section>		
+</html>
+
+
+
